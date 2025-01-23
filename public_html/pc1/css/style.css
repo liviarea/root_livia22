@@ -1,0 +1,128 @@
+/* basic reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px;
+    line-height: 44px; 
+    color: rgb(188, 170, 228);
+    background-color: rgb(75, 75, 97);
+}
+
+header {
+    width: 100%;
+    height: 255px;
+    background-color: rgb(126, 165, 224);
+    padding: 20px;
+   position: fixed;
+}
+
+nav ul li {
+display: inline-block;
+
+margin-right: 30px;
+}
+
+main, footer {
+    padding: 20px;
+}
+
+main article {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+main article img {
+width: 100%;
+}
+
+main {
+    background-color: rgb(57, 49, 105);
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+footer{
+    background-color: #aca7fa;
+}
+
+
+nav ul li {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+main, footer {
+padding: 20px;
+}
+
+main article {
+    gap: 1rem;
+}
+
+#gallery {
+    background-color: rgb(67, 53, 78);
+    display: grid;
+    }
+    
+ @media screen and (min-width: 450px) {
+    #gallery {
+        grid-template-columns: 1fr;}
+    }
+    
+@media screen and (min-width: 600px) {
+    #gallery {
+        grid-template-columns: 1fr 1fr;
+        }
+    }
+    
+@media screen and (min-width: 900px) {
+    #gallery {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    figure {
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 40px;
+        unicode-bidi: isolate;
+    }
+    h1 {
+        text-align: center;
+        font-family: "DynaPuff", system-ui;
+      font-optical-sizing: auto;
+      font-weight: 450px;
+      font-style: normal;
+      font-variation-settings:
+        "wdth" 100;
+    }
+    p {
+        text-align: center;
+    }
+title {
+    .lobster-regular {
+        font-family: "Lobster", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      
+}
+
+a:hover {
+    background-color: #aca7fa;
+}
+
+a {
+    .chicle-regular {
+        font-family: "Chicle", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      
+}

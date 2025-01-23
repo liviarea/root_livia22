@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Demo 1</title>
+ <style>
+        body {background-color: antiquewhite;}
+    </style>
+</head>
+ 
+<body>
+    <h1>JavaScript - Demo 1 </h1>
+    <button onclick="tuhMater()">click me!</button> 
+    <main id="content"></main>
+  <audio src= "audio/chill-lofi-music-interior-lounge-256260.mp3" controls></audio>
+  <script>
+    alert ("my name is Mater just like TUHmater without the TUH")
+
+    console. log( "page loaded successfuly!")
+
+    //veriables 
+    // dynamic veriable type "let" (data can be changed)
+    let myName = "Livia"
+
+    myName = "Mater"
+
+        console. log (myName)
+
+        // constant variable (data cant be changed)
+const pi = 3.14159
+console. log (pi * 5)
+
+///mixed message logging
+/// uses + to concatenate mulitple stings with other strings or data
+///  sting = textual dat in qoutes 
+console. log ("Pi times 5: " + pi * 5)
+
+let mySound = new Audio ("audio/chill-lofi-music-interior-lounge-256260.mp3") 
+
+const myContent = document.getElementById ("content")
+
+
+
+function tuhMater () {
+   myContent.innerHTML = "Hello!!"
+   mySound.play ()
+
+}
+
+
+
+
+
+  </script>
+
+  
+
+
+
+
+</body>
+</html>

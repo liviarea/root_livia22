@@ -1,0 +1,76 @@
+/* basic reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 22px;
+    line-height: 44px; 
+    color: rgb(177, 20, 137);
+    background-color: rgba(249, 228, 246, 0.5);
+    background-image: url(../img/pink-wallpaper.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+header {
+    width: 100%;
+    height: 255px;
+    background-color: rgb(234, 195, 233);
+    padding: 20px;
+   position: fixed;
+}
+
+nav ul li {
+display: inline-block;
+margin-right: 30px;
+}
+
+main, footer {
+    padding: 20px;
+}
+
+main article p {
+    /* max-width: 60ch; */ 
+    max-width: 800px;
+}
+
+main {
+    background-color: rgba(199, 177, 219, 0.288);
+    padding: 255px;
+}
+
+footer{
+    background-color: rgba(250, 167, 211, 0.247);
+}
+
+.fancy-button {
+    background-color: rgb(252, 83, 167);
+    padding: 20px 35px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 10px rgb(197, 80, 233);
+    color: black;
+    font-weight: bold;
+}
+
+/* styling forms*/ 
+input[type=text],
+input[type=password], 
+input[type=submit] ,
+textarea {
+    display: block;
+    padding: 10px;
+    border: 1px solid lightpink;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    width: 260px;
+}
