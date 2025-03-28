@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project 2</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div id="panel">click to open</div>
+
+<h1>Project 2!</h1>  
+<h3>this is me!</h3>  
+
+<img src="img/dino.svg" alt="" width="10%" id="dino">
+
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius repudiandae officia error beatae voluptate quos in facere ut natus quo eveniet delectus, voluptatibus sapiente corporis aspernatur, eaque praesentium. Nesciunt, expedita?</p>
+
+<h3>work in process</h3>
+<img src="img/dino.figma.png" alt="">
+<img src="img/dino.sketch.jpg" alt="">
+
+<button id="game" onclick="top.location.href = '../project3/index.html'">play game!</button>
+
+
+
+<script>
+    const myPannel = document.getElementById ("panel")
+    const sound = new Audio("./audio/bubbles.mp3")
+
+    myPannel.onclick = function(){
+        myPannel.classList.toggle('slide-up');
+        sound.play();
+    }
+</script>
+<p><a href="../index.html">Back Home!</a></p>
+</body>
+
+</html>

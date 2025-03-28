@@ -1,0 +1,61 @@
+body {
+    background-color: #D4C2AD;
+  }
+
+  h1 {
+    font-family: spectral-light;
+    font-size: 35px;
+    color: #422C22;
+    text-align: center;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  header {
+    width: 100%;
+    height: auto;
+    padding: 50px;
+    background-color: #BA8E7A;
+  }
+
+  nav ul li {
+    display: inline-block;
+    padding-right: 20px;
+    padding-top: 5px;
+    }
+
+  main article p {
+      /* max-width: 60ch; */ 
+      width: auto;
+  }
+
+main {
+  background-color: #EFDFCC ;
+}
+
+footer{
+  background-color: #BA8E7A;
+  text-align: center;
+  bottom: 0;
+  height: 90px;
+  grid-template-columns: 1fr repeat(5, minmax(auto, auto));
+}
+
+nav{
+  justify-content: end;
+  grid-template-columns: 1fr repeat(5, minmax(auto, auto));
+  display: grid;
+  gap: 1.44rem;
+}
+
+a {
+  color: #281d18;
+  font-family: spectral-extralight;
+  font-size: 24px;
+}
+
+nav a:hover {
+  color: #845335;
+}

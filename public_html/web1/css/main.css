@@ -1,0 +1,82 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
+.eb-garamond-<uniquifier> {
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  }
+
+body {
+    font-size: 22px;
+    font-family: "EB Garamond", serif;
+    background-color: #ffe4b3;
+    color: #fe470a;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+h1 {
+    text-align: center;
+
+}
+
+p {
+    text-align: center;
+}
+
+a{
+    text-align: center;
+    color: #ffe4b3;
+}
+
+a :hover {
+    background-color: rgb(96, 51, 93);
+}
+
+button {
+    background-color:#ff789f;
+    border-style: solid;
+    border-width: 2px;
+    box-shadow: #ffe4b3 15px 28px 25px -18px;
+    font-size: 1rem;
+    line-height: 23px;
+    padding: .75rem;
+    transition: all 235ms ease-in-out;
+    border-bottom-left-radius: 15px 255px;
+    border-bottom-right-radius: 225px 15px;
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+    text-align: center;
+    display: block;
+    margin: auto;
+  
+  }
+  
+  button:hover {
+    box-shadow:#810b2d 2px 8px 8px -5px;
+    transform: translate3d(0, 2px, 0);
+  }
+  
+  button:focus {
+    box-shadow: var(#400214) 2px 8px 4px -6px;
+  }
+  
+  section{
+    padding-top: 30px;
+  }
+  
+  section a{
+    font-size: 20px;
+    color:#e5658a;
+    background-color: var(--white);
+    padding: 8px 16px;
+   text-decoration: wavy;
+  }

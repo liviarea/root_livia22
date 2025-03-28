@@ -1,0 +1,229 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.spectral-extralight {
+    font-family: "Spectral", serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  .spectral-light {
+    font-family: "Spectral", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .spectral-regular {
+    font-family: "Spectral", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .spectral-medium {
+    font-family: "Spectral", serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .spectral-semibold {
+    font-family: "Spectral", serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .spectral-bold {
+    font-family: "Spectral", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .spectral-extrabold {
+    font-family: "Spectral", serif;
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  .spectral-extralight-italic {
+    font-family: "Spectral", serif;
+    font-weight: 200;
+    font-style: italic;
+  }
+
+  body {
+    background-color: #D4C2AD;
+  }
+
+  h1 {
+    font-family: spectral-light;
+    font-size: 35px;
+    color: #422C22;
+    text-align: center;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  header {
+    width: 100%;
+    height: auto;
+    padding: 50px;
+    background-color: #BA8E7A;
+  }
+
+  nav ul li {
+    display: inline-block;
+    padding-right: 20px;
+    padding-top: 5px;
+    }
+
+  main article p {
+      /* max-width: 60ch; */ 
+      width: auto;
+  }
+
+main {
+  background-color: #EFDFCC ;
+}
+
+footer{
+  background-color: #BA8E7A;
+  text-align: center;
+  bottom: 0;
+  height: 90px;
+  grid-template-columns: 1fr repeat(5, minmax(auto, auto));
+}
+
+nav{
+  justify-content: end;
+  grid-template-columns: 1fr repeat(5, minmax(auto, auto));
+  display: grid;
+  gap: 1.44rem;
+}
+
+a {
+  color: #281d18;
+  font-family: spectral-extralight;
+  font-size: 24px;
+}
+
+nav a:hover {
+  color: #845335;
+}
+
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+#cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.44rem;
+  padding: 1.44rem 0.833rem;
+
+}
+
+#cards figure {
+  position: relative;
+}
+
+#cards a {
+  background-color: #66796B;
+  border: solid 1px #516156;
+  /* border colour :) */
+  border-radius: 0.5rem;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+#cards img {
+  width: 100%;
+  aspect-ratio: 16/6;
+  object-fit: cover;
+  object-position: center center;
+  position: absolute;
+  top: 0;
+}
+
+#cards iframe {
+  width: 100%;
+  aspect-ratio: 16/6;
+  object-fit: cover;
+  object-position: center center;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+}
+
+#cards section{
+  padding: 0.833rem;
+}
+
+#cards h3 {
+  font-size: clamp(0.833rem, 1.6vw + 0.579rem, 1.728rem);
+  opacity: 0.5;
+  transition: opacity 0.5s;
+}
+
+#cards p {
+  opacity: 0;
+  transition: 0.25;
+}
+
+#cards .over {
+  position: relative;
+  top: 1.44rem;
+  opacity: 0;
+  transition: 0.25s;
+}
+
+#cards a:hover {
+  transition: color 1s;
+}
+
+#cards a:hover h3, #cards a:hover p{
+  opacity: 1;
+}
+
+#cards section {
+  transform: translateY(1.728rem);
+  transition: transform 0.25s;
+}
+
+#cards a:hover section {
+  transform: translateY(0);
+}
+
+#cards a:hover .over {
+  top: 0;
+  opacity: 1;
+}
+
+@media screen and (min-width:525px) {
+  #cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width:925px){
+#cards {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+}
+
+nav, footer {
+  position: fixed;
+  padding: 0 0.5rem;
+  width: 100%;
+  height: 100px;
+  background-color: #845335;
+  display: grid;
+  grid-template-columns: 1fr repeat(5, minmax(auto, auto));
+  /* justify-content: end; */
+  z-index: 999;
+}
+

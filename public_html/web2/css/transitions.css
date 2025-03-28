@@ -1,0 +1,185 @@
+/*fonts*/
+.spectral-extralight {
+    font-family: "Spectral", serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  .spectral-light {
+    font-family: "Spectral", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .spectral-regular {
+    font-family: "Spectral", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .spectral-medium {
+    font-family: "Spectral", serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .spectral-semibold {
+    font-family: "Spectral", serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .spectral-bold {
+    font-family: "Spectral", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .spectral-extrabold {
+    font-family: "Spectral", serif;
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  .spectral-extralight-italic {
+    font-family: "Spectral", serif;
+    font-weight: 200;
+    font-style: italic;
+  }
+
+  /*the rest of css*/
+  body {
+    background-color: #D4C2AD;
+  }
+
+  h1 {
+    font-family: spectral-light;
+    font-size: 30px;
+    color: #422C22;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  header {
+    width: 100%;
+    height: auto;
+    padding: 80px;
+    background-color: #BA8E7A;
+    text-align: center;
+  }
+
+  nav ul li {
+    display: inline-block;
+    padding-right: 20px;
+    padding-top: 5px;
+    }
+
+  main article p {
+      /* max-width: 60ch; */ 
+      width: auto;
+  }
+
+main {
+  background-color: #EFDFCC ;
+}
+
+footer{
+  background-color: #BA8E7A;
+  text-align: center;
+}
+
+nav{
+  justify-content: end;
+  grid-template-columns: 1fr repeat(5, minmax(auto, auto));
+  display: grid;
+  gap: 1.44rem;
+}
+
+a {
+  color: #281d18;
+  font-family: spectral-extralight;
+  font-size: 24px;
+}
+
+nav a:hover {
+    color: #845335;
+  }
+
+nav, footer {
+    position: fixed;
+    padding: 0 0.5rem;
+    width: 100%;
+    height: 100px;
+    background-color: #845335;
+    display: grid;
+    grid-template-columns: 1fr repeat(5, minmax(auto, auto));
+    /* justify-content: end; */
+    z-index: 999;
+  }
+
+  /* transition 1*/
+  figure .visible {
+    opacity: 1;
+  }
+
+  figure .hidden {
+    opacity: 0;
+  }
+
+  figure{
+    position: relative;
+}
+
+figure img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+}
+
+figure:hover .hidden{
+    opacity: 1;
+}
+
+img{
+    opacity: 0.25;
+    transition: opacity 500ms;
+    border-radius: 10%;
+    align-items: center;
+}
+
+a:link{
+    transition: color 0.5s;
+}
+
+img{
+    opacity: 0.25;
+    transition: opacity 500ms;
+}
+
+figure:hover .hidden{
+    opacity: 1;
+}
+
+figure:hover .visible{
+    opacity: 0;
+}
+
+#html5, #css3, #car{
+    transition: transform 0.5s;
+}
+
+/*transistion 2*/
+img{
+  opacity: 0.25;
+  transition: opacity 500ms;
+  border-radius: 10%;
+  align-items: center;
+}
+
+img:hover{
+  opacity: 1;
+}
+

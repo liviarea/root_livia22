@@ -1,0 +1,61 @@
+img{
+    width: 250px;
+    height: auto;
+    border-radius: 30px;
+    margin-top: 20px;
+}
+
+#cat{
+    animation-name: movingAround;
+    animation-duration: 7s;
+    animation-fill-mode: initial;
+    animation-iteration-count: infinite;
+}
+
+@keyframes movingAround{
+    0%{
+        transform: translateX(90px);
+    }
+    25%{
+        transform: translateX(50px);
+    }
+    50%{
+        transform: rotateX(180deg) translateY(-900px);
+    }
+
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+body {
+    background-color: #c6ae82;
+  }
+
+  h3 {
+    color: #362710;
+    font-family: Playfair Display SC ;
+    text-align: center;
+  }
+
+  h1 {
+    color: #1d160b;
+    font-family: "Metal Mania", serif ;
+    font-size: 50px;
+    text-align: center;
+  }
+
+  header {
+    width: 100%;
+    height: auto;
+    padding: 50px;
+    background-color: #8A7353;
+  }
+
+  footer {
+    background-color: #8A7353;
+    text-align: center;
+    bottom: 0;
+    height: 90px;
+    grid-template-columns: 1fr repeat(5, minmax(auto, auto));
+  }

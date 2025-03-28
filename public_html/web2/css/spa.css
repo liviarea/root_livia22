@@ -1,0 +1,256 @@
+.metal-mania-regular {
+    font-family: "Metal Mania", serif;
+    font-weight: 400;
+    font-style: normal;
+  } 
+
+  .special-elite-regular {
+    font-family: "Special Elite", serif;
+    font-weight: 400;
+    font-style: normal;
+  }  
+
+  .playfair-display-sc-black-italic {
+    font-family: "Playfair Display SC", serif;
+    font-weight: 900;
+    font-style: italic;
+  }
+  
+   
+  body {
+    background-color: #c6ae82;
+  }
+
+  h3 {
+    color: #362710;
+    font-family: Playfair Display SC ;
+    text-align: center;
+  }
+
+  h1 {
+    color: #1d160b;
+    font-family: "Metal Mania", serif ;
+    font-size: 50px;
+    text-align: center;
+  }
+
+  header {
+    width: 100%;
+    height: auto;
+    padding: 50px;
+    background-color: #8A7353;
+  }
+
+  footer {
+    background-color: #8A7353;
+    text-align: center;
+    bottom: 0;
+    height: 90px;
+    grid-template-columns: 1fr repeat(5, minmax(auto, auto));
+  }
+
+  p {
+    font-family: "Special Elite", serif;
+    color: #1d160b;
+    text-align: center;
+  }
+
+  a {
+    font-family:"Special Elite", serif ;
+    color: #1d160b;
+  }
+
+  nav ul li {
+    display: inline-block;
+    padding-right: 20px;
+    padding-top: 5px;
+    }
+
+ nav{
+      justify-content: end;
+      grid-template-columns: 1fr repeat(5, minmax(auto, auto));
+      display: grid;
+      gap: 1.44rem;
+    }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+  /*cards*/
+  #cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.44rem;
+    padding: 1.44rem 0.833rem;
+  
+  }
+  
+  #cards figure {
+    position: relative;
+  }
+  
+  #cards a {
+    background-color: #655945;
+    border: solid 5px #625642;
+    /* border colour :) */
+    border-radius: 0.5rem;
+    overflow: hidden;
+    text-decoration: none;
+  }
+  
+  #cards img {
+    width: 100%;
+    aspect-ratio: 16/6;
+    object-fit: cover;
+    object-position: center center;
+    position: absolute;
+    top: 0;
+  }
+  
+  #cards iframe {
+    width: 100%;
+    aspect-ratio: 16/6;
+    object-fit: cover;
+    object-position: center center;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+  }
+  
+  #cards section{
+    padding: 0.833rem;
+  }
+  
+  #cards h3 {
+    font-size: clamp(0.833rem, 1.6vw + 0.579rem, 1.728rem);
+    opacity: 0.5;
+    transition: opacity 0.5s;
+  }
+  
+  #cards p {
+    opacity: 0;
+    transition: 0.25;
+  }
+  
+  #cards .over {
+    position: relative;
+    top: 1.44rem;
+    opacity: 0;
+    transition: 0.25s;
+  }
+  
+  #cards a:hover {
+    transition: color 1s;
+  }
+  
+  #cards a:hover h3, #cards a:hover p{
+    opacity: 1;
+  }
+  
+  #cards section {
+    transform: translateY(1.728rem);
+    transition: transform 0.25s;
+  }
+  
+  #cards a:hover section {
+    transform: translateY(0);
+  }
+  
+  #cards a:hover .over {
+    top: 0;
+    opacity: 1;
+  }
+  
+  @media screen and (min-width:525px) {
+    #cards {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media screen and (min-width:925px){
+  #cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  }
+
+  img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    align-items: center;
+  }
+
+  /*transition*/
+  img{
+    opacity: 0.25;
+    transition: opacity 500ms;
+    border-radius: 10%;
+    align-items: center;
+}
+
+img:hover {
+  opacity: 1;
+}
+
+figure img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+}
+
+figure{
+  position: relative;
+}
+
+  /*cursor*/
+
+ * {
+  cursor: url(../img/icons8-ghost-64.png) 9 9 , auto;
+ }
+
+ /* button
+ button {
+  background-color:#2D2518;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: #edb86333 15px 28px 25px -18px;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 23px;
+  padding: .75rem;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+
+}
+
+button:hover {
+  box-shadow:#1D170B 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+button:focus {
+  box-shadow: var(#1D170B) 2px 8px 4px -6px;
+}
+
+section{
+  padding-top: 30px;
+}
+
+section a{
+  font-size: 20px;
+  color:#C6AE82;
+  background-color: var(--white);
+  padding: 8px 16px;
+  text-decoration: none;
+}
+ */
+
+  
+  
