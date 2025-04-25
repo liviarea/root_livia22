@@ -92,9 +92,10 @@ main {
 footer{
   background-color: #BA8E7A;
   text-align: center;
-  bottom: 0;
-  height: 90px;
+  bottom: 0px;
+  height: 5px;
   grid-template-columns: 1fr repeat(5, minmax(auto, auto));
+  position: relative;
 }
 
 nav{

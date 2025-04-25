@@ -90,12 +90,15 @@
 main {
   background-color: #EFDFCC ;
 }
-
+/*footer
 footer{
   background-color: #BA8E7A;
   text-align: center;
+  width: 100%;
+  padding: 50px;
+  position: relative;
 }
-
+*/
 nav{
   justify-content: end;
   grid-template-columns: 1fr repeat(5, minmax(auto, auto));
