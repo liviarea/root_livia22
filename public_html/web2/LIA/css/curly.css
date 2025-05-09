@@ -33,6 +33,13 @@
     text-align: center;
   }
 
+  h2 {
+    color: #1E1D1D;
+    font-family:"Dancing Script", cursive ;
+    font-size: 50px;
+    text-align: center;
+  }
+
  p {
     color: #1E1D1D;
     font-family:"Noto Serif Display", serif ;
@@ -98,13 +105,6 @@ a {
   color: #303031;
   font-family:"Noto Serif Display", serif ;
   font-size: 24px;
-}
-#banner {
-  background-image: url(https://i.pinimg.com/736x/4e/bf/50/4ebf5099068f7578289dfee6e22f5a24.jpg);
-  width: 100%;
-  height: 30vh;
-  background-size: cover;
-  background-position: center top;
 }
 
 @media screen and (min-width:525px) {
