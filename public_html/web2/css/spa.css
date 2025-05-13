@@ -75,9 +75,8 @@
 
   .center {
     display: block;
-    margin-left: auto;
+    margin-left: auto; 
     margin-right: auto;
-    width: 50%;
   }
 
   /*cards*/
@@ -181,6 +180,7 @@
     overflow-clip-margin: content-box;
     overflow: clip;
     align-items: center;
+
   }
 
   /*transition*/

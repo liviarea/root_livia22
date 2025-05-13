@@ -22,6 +22,7 @@
   font-style: normal;
 }
 
+
   body {
     background-color: #867C70;
   }
@@ -44,6 +45,7 @@
     color: #1E1D1D;
     font-family:"Noto Serif Display", serif ;
     text-align: left;
+    padding: 20px;
   }
 
   header {
@@ -61,7 +63,7 @@
     }
 
  footer{
-      background-color: #7E6957;
+      background-color: #7e695757;
       text-align: center;
       bottom: 0px;
       height: 1px;
@@ -79,13 +81,8 @@ nav, footer {
       grid-template-columns: 1fr repeat(5, minmax(auto, auto));
       display: grid;
       gap: 1.44rem;
+      text-align: center;
  }
-
- nav ul li {
-  display: inline-block;
-  padding-right: 20px;
-  padding-top: 5px;
-  }
 
 main article p {
     /* max-width: 60ch; */ 
@@ -96,10 +93,6 @@ nav a:hover {
   color: #303031;
 }
 
-img {
-  overflow-clip-margin: content-box;
-  overflow: clip;
-}
 
 a {
   color: #303031;
@@ -142,7 +135,7 @@ a {
 /* cards */
 #cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr ;
   gap: 1.44rem;
   padding: 1.44rem 0.833rem;
 
@@ -226,4 +219,27 @@ a {
   opacity: 1;
 }
 
-  
+#banner {
+  background-image:url(../img/header1.webp);
+  width: 100%;
+  height: 30vh;
+  background-size: cover;
+  background-position: center top;
+}
+
+blockquote {
+  font-family:"Dancing Script", cursive; ;
+  background: #7E6957;
+  border-left: 5px solid #5A4D41;
+  margin: 20px auto;
+  padding: 20px 30px;
+  max-width: 600px;
+  color: #333;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+blockquote:hover {
+  border-left-color: #303031;
+  background: #777780;
+}

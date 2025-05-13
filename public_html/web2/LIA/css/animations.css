@@ -1,0 +1,112 @@
+figure .visible {
+  opacity: 1;
+}
+
+figure .hidden {
+  opacity: 0;
+}
+
+figure{
+  position: relative;
+}
+
+figure img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+}
+
+figure{
+  position: relative;
+}
+
+a:link{
+  transition: color 0.5s;
+}
+
+
+figure:hover .hidden{
+  opacity: 1;
+}
+
+figure:hover .visible{
+  opacity: 0;
+}
+
+#html5, #css3, #car{
+  transition: transform 0.5s;
+}
+
+.slideshow {
+  width: 100vw;
+  height: 33vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+  .carousel {
+  width: 600px;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  margin: 40px auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.slides {
+  display: flex;
+  width: 1800px; /* 600px × 3 slides */
+  animation: slide 9s infinite;
+}
+
+.slides img {
+  width: 600px;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* Keyframes to animate the carousel */
+@keyframes slide {
+  0%    { transform: translateX(0); }
+  33.33% { transform: translateX(-600px); }
+  66.66% { transform: translateX(-1200px); }
+  100%  { transform: translateX(0); }
+}
+
+.gallery {
+  --g: 8px; /* the gap */
+  
+  display: grid;
+  clip-path: inset(1px); /* to avoid visual glitchs */
+}
+.gallery > img {
+  --_p: calc(-1*var(--g));
+  grid-area: 1/1;
+  width: 350px; /* control the size */
+  aspect-ratio: 1;
+  cursor: pointer;
+  transition: .4s .1s;
+}
+.gallery > img:first-child {
+  clip-path: polygon(0 0, calc(100% + var(--_p)) 0 , 0 calc(100% + var(--_p)))
+}
+.gallery > img:last-child {
+  clip-path: polygon(100% 100%, 100% calc(0% - var(--_p)), calc(0% - var(--_p)) 100%)
+}
+.gallery:hover > img:last-child,
+.gallery:hover > img:first-child:hover{
+  --_p: calc(50% - var(--g));
+}
+.gallery:hover > img:first-child,
+.gallery:hover > img:first-child:hover + img{
+  --_p: calc(-50% - var(--g));
+}
