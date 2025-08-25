@@ -110,3 +110,19 @@ figure:hover .visible{
 .gallery:hover > img:first-child:hover + img{
   --_p: calc(-50% - var(--g));
 }
+
+    .fade-in-hover {
+      opacity: 0.5;
+      transition: opacity 0.5s;
+    }
+
+    .fade-in-hover:hover {
+      animation: fadeIn 1s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
