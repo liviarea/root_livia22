@@ -1,0 +1,22 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+#grille {
+    width: 30vmin;
+    height: 30vmin;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: auto;
+    padding-left: 20px;
+}
+
+#grille .case {
+    border: solid black 1px;
+    display: grid;
+    place-items: center;
+    height: 10vmin;
+    width: 10vmin;
+}
