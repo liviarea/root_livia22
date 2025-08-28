@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 #grille {
     width: 30vmin;
     height: 30vmin;
@@ -14,9 +15,96 @@
 }
 
 #grille .case {
-    border: solid black 1px;
+    border: solid #e14c70 1px;
     display: grid;
     place-items: center;
     height: 10vmin;
     width: 10vmin;
+}
+
+.case:hover {
+    background-color:#ffaeb4 ;
+}
+
+.jua-regular {
+  font-family: "Jua", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.atma-medium {
+  font-family: "Atma", system-ui;
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+body {
+    background-color: #ffefdd;
+}
+
+h1 {
+size: 35px;
+font-family: "Jua", sans-serif;
+color: #f0774f;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    width: 100%;
+    height: auto;
+    padding: 50px;
+    text-align: center;
+    background-color: #ffaeb4;
+}
+
+nav ul li {
+    display: inline-block;
+    padding-right: 20px;
+    padding-top: 5px;
+    }
+
+footer{
+  background-color: #ffaeb4;
+  text-align: center;
+  width: 100%;
+  padding: 50px;
+  position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: #ff9777;
+    font-family: "Atma", system-ui;
+}
+
+a:hover {
+    color: #c96749;
+    text-decoration: wavy underline;
+}
+
+button {
+    font-family: "Atma", system-ui;
+    background-color: #e14c70;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border-color: #f0774f;
+    margin: auto;
+    display: block;
+}
+
+button:hover {
+    background-color: #ffaeb4
+}
+
+p {
+    color: #f0774f;
+    font-family: "Atma", system-ui;
+    font-size: 20px;
+    text-align: center;
+    margin: auto;
 }
