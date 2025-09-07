@@ -4,34 +4,109 @@
     box-sizing: border-box;
 }
 
-.staatliches-regular {
-  font-family: "Staatliches", sans-serif;
+
+.lexend-exa-bold {
+  font-family: "Lexend Exa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.lato-regular {
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
 
+
 body {
-    background-color: #eac8ab;
+    background-color: #DDDFC2;
 }
-
-h1 {
-    font-family: "Staatliches", sans-serif;
-    font-weight: 400;
-    font-size: 56px;
-    color: #748da4;
-}
-
-  html {
-    scroll-behavior: smooth;
-  }
 
   header {
     width: 100%;
     height: auto;
     padding: 50px;
-    background-color: #dca782;
+    background-color: #97AC82;
+    text-align: center;
   }
+
+h1 {
+    font-family: "Lexend Exa", sans-serif;
+    font-size: 56px;
+    color: #2C341B;
+}
+
+h3 {
+    font-family: "Lato", sans-serif;
+    font-size: 24px;
+    color: #2C341B;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+a {
+    font-family: "Lato", sans-serif;
+    font-size: 20px;
+    color: #2C341B;
+    text-decoration: wavy underline;
+    transition: color 0.1s;
+}
+
+a:hover {
+    color: #DDDFC2;
+
+  }
+
+
+/*scroll cards*/
+.slider{
+  position: relative;
+  width: 100%;
+  height: 370px;
+  overflow: hidden;
+}
+
+.item {
+  position: absolute;
+  width: 200px;
+  height: 320px;
+  text-align: justify;
+  background-color: #688A65;
+  border-radius: 10px;
+  padding: 20px;
+  transition: 0.5s;
+  left: calc(50% - 110px);
+  top: 0;
+}
+
+#next, #prev{
+  position: absolute;
+  top: 40%;
+  color: #2C341B;
+  background-color: transparent;
+  border: none;
+  font-size: xxx-large;
+  font-family:"Lexend Exa", sans-serif;
+  font-weight: bold;
+  left: 50px;
+}
+
+#next{
+  left: unset;
+  right: 50px;
+}
+
+
+
+
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+
 
 nav ul li {
     display: inline-block;
@@ -39,7 +114,3 @@ nav ul li {
     padding-top: 5px;
  }
 
-main article p {
-      /* max-width: 60ch; */ 
-      width: auto;
-      }

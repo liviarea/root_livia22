@@ -54,20 +54,7 @@ h1 {
   a{
     font-family: 'Inter', sans-serif;
   }
-  a:link,
-  a:visited {
-    color: #EFDFCC;
-    /*transition: color 0.5s;*/
-  }
   
-  a:hover,
-  a:focus {
-    color: #050301;
-    text-decoration: none;
-  }
-  a:active {
-    color: #9f6e3d;
-  }
   
   img, video {
     max-width: 100%;
