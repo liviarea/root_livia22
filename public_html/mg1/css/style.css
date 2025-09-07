@@ -4,6 +4,23 @@
     box-sizing: border-box;
 }
 
+@media screen and (min-width: 450px) {
+    #gallery {
+    grid-template-columns: 1fr;}
+}
+
+@media screen and (min-width: 600px) {
+    #gallery {
+    grid-template-columns: 1fr, 1fr;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    #gallery {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
 
 .lexend-exa-bold {
   font-family: "Lexend Exa", sans-serif;
@@ -113,4 +130,18 @@ nav ul li {
     padding-right: 20px;
     padding-top: 5px;
  }
+
+ main, footer {
+    padding: 20px;
+}
+
+main article p {
+    /* max-width: 60ch; */ 
+    max-width: 1800px;
+}
+
+main article img {
+width: 100%;
+height: auto;
+}
 

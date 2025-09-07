@@ -21,11 +21,12 @@ for (let boite of cases) {
    boite.addEventListener( "click", function() {
    if (boite.active) {
         if (joueurX) {
-           boite.innerText = "X";
+            /* boite.style.backgroundImage = "url(x.png)" */
+           boite.style.backgroundImage = "url(X.png)";
             joueurX = false;
         }
             else {
-            boite.innerText = "O";
+            boite.style.backgroundImage = "url(O.png)";
             joueurX = true;
         }
    }
@@ -45,7 +46,7 @@ replayBtn.addEventListener("click", function() {
 })
 
 const valide = function () {
-    for (let patron of patrons) { 
+    for (let patron of patron) { 
         let val1 = cases [patron[0]].innerText
         let val2 = cases [patron[1]].innerText
         let val3 = cases [patron[2]].innerText
@@ -58,5 +59,12 @@ const valide = function () {
             boite.active = false;
         }
         }
+    }
+}
+
+else {
+    for (Let patron of patron) {
+        let val1 = cases [patron[0]].style.backgroundImage.slice(5,10)
+        let val2 = cases[patron[1]].style.backgroundImage.slice(5,10)
     }
 }
