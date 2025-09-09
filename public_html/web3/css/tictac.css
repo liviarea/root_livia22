@@ -11,16 +11,18 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin: auto;
-    padding-left: 20px;
 }
 
 #grille .case {
-    border: solid #e14c70 1px;
+    border: solid #887952 10px;
     display: grid;
     place-items: center;
     height: 10vmin;
     width: 10vmin;
     margin: 1px;
+    background-color: #4E4236;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .case:hover {
@@ -50,7 +52,7 @@ body {
 h1 {
 size: 35px;
 font-family: "Jua", sans-serif;
-color: #f0774f;
+color: #e21907d8;
 }
 
 html {
@@ -60,9 +62,9 @@ html {
 header {
     width: 100%;
     height: auto;
-    padding: 50px;
+    padding: 10px;
     text-align: center;
-    background-color: #ffaeb4;
+    background-color: #314d2f7e;
 }
 
 nav ul li {
@@ -97,8 +99,7 @@ button {
     padding: 10px;
     border-radius: 5px;
     border-color: #f0774f;
-    margin: auto;
-    display: block;
+    margin: 20px;
 }
 
 button:hover {

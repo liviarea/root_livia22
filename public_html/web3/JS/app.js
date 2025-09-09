@@ -22,11 +22,11 @@ for (let boite of cases) {
    if (boite.active) {
         if (joueurX) {
             /* boite.style.backgroundImage = "url(x.png)" */
-           boite.style.backgroundImage = "url(X.png)";
+           boite.style.backgroundImage = "url('img/cow.svg')";
             joueurX = false;
         }
             else {
-            boite.style.backgroundImage = "url(O.png)";
+            boite.style.backgroundImage = "url('img/pig.svg')";
             joueurX = true;
         }
    }
@@ -40,21 +40,23 @@ valide();
 replayBtn.addEventListener("click", function() {
         for (let boite of cases) {
         boite.active = true
-        boite.innerText = '';
+        boite.style.backgroundImage = '';
         joueurX = true;
         }
 })
 
 const valide = function () {
     for (let patron of patron) { 
-        let val1 = cases [patron[0]].innerText
-        let val2 = cases [patron[1]].innerText
-        let val3 = cases [patron[2]].innerText
+        let val1 = cases [patron[0]].style.backgroundImage.slice(5,14)
+        let val2 = cases [patron[1]].style.backgroundImage.slice(5,14)
+        let val3 = cases [patron[2]].style.backgroundImage.slice(5,14)
 
         if (val1 &&
             val1 === val2 &&
             val1 === val3) {
         console.log(`Le gagnant est ${val1}`);
+        console.log(panneauMessageGagnant);
+            panneauMessageGagnant.src = val1;
         for (let boite of cases) {
             boite.active = false;
         }
@@ -62,9 +64,3 @@ const valide = function () {
     }
 }
 
-else {
-    for (Let patron of patron) {
-        let val1 = cases [patron[0]].style.backgroundImage.slice(5,10)
-        let val2 = cases[patron[1]].style.backgroundImage.slice(5,10)
-    }
-}
