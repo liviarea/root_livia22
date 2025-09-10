@@ -10,11 +10,12 @@
     height: 30vmin;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    margin: auto;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-self: center;
 }
 
 #grille .case {
-    border: solid #887952 10px;
+    border: solid #887952 1vmin;
     display: grid;
     place-items: center;
     height: 10vmin;
@@ -23,6 +24,18 @@
     background-color: #4E4236;
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+#message {
+    font-size: 25px;
+    text-align: center;
+    margin: 20px;
+    color: #e21907d8;
+    font-family: "Jua", sans-serif;
+}
+
+#message img {
+    max-width: 15vmin;
 }
 
 .case:hover {
@@ -46,6 +59,9 @@ body {
     background-image: url(../img/grass.png);
     background-blend-mode: normal;
     background-size: cover;
+    background-repeat: no-repeat
+    background-attachment fixed
+    ;
 }
 
 
