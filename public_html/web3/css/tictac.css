@@ -99,27 +99,27 @@ footer{
 
 a {
     text-decoration: none;
-    color: #ff9777;
+    color: #bb3305;
     font-family: "Atma", system-ui;
 }
 
 a:hover {
-    color: #c96749;
+    color: #651f09;
     text-decoration: wavy underline;
 }
 
 button {
     font-family: "Atma", system-ui;
-    background-color: #e14c70;
+    background-color: #b03902;
     color: white;
     padding: 10px;
     border-radius: 5px;
-    border-color: #f0774f;
+    border-color: #631b02;
     margin: 20px;
 }
 
 button:hover {
-    background-color: #ffaeb4
+    background-color: #ac2a0a
 }
 
 p {
