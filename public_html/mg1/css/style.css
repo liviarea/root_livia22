@@ -6,7 +6,7 @@
 
 @media screen and (min-width: 450px) {
     #gallery {
-    grid-template-columns: 1fr;}
+    grid-template-columns: 1fr 1fr 1fr;}
 }
 
 
@@ -30,12 +30,21 @@ body {
     background-color: #DDDFC2;
 }
 
-  header {
+header {
     width: 100%;
     height: auto;
     padding: 50px;
     background-color: #97AC82;
     text-align: center;
+  }
+
+footer {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    background-color: #97AC82;
+    text-align: center;
+    font-family:"Lato", sans-serif ;
   }
 
 h1 {
@@ -44,8 +53,16 @@ h1 {
     color: #2C341B;
 }
 
+h2 {
+    font-family: "Lexend Exa", sans-serif;
+    font-size: 32px;
+    color: #2C341B;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
 h3 {
-    font-family: "Lato", sans-serif;
+    font-family: "Lexend Exa", sans-serif;
     font-size: 24px;
     color: #2C341B;
     padding-top: 20px;
@@ -136,6 +153,7 @@ button a {
 #gallery {
     background-color: #DDDFC2;
     display: grid;
+    grid-template-columns: 1fr ;
     }
     
 
