@@ -41,7 +41,7 @@ playerImage.onload = function () {
 // Image des goodies
 var goodyReady = false;
 var goodyImage = new Image(); 
-goodyImage.src = "img/goody.png"; 
+goodyImage.src = "img/goody.png";
 goodyImage.onload = function () {
     goodyReady = true; 
 };
@@ -59,22 +59,22 @@ badImage.onload = function () {
 // Créer des objets de jeu globaux 
 var player = {
     speed : 5, // mouvement en pixels par tick 
-    width: 70,
-    height: 32
+    width: 90,   // a little bigger than goodies/baddies
+    height: 90  // increased height
 };
 
 var goodies = [ // ceci est un tableau (array)
-    { width: 40, height: 10 }, // un goody
-    { width: 40, height: 10 }, // deux goodies
-    { width: 40, height: 10 },  // trois goodies
-    { width: 40, height: 10 }  // quatres goodies
+    { width: 44, height: 44 }, // un goody (a little bigger)
+    { width: 44, height: 44 }, // deux goodies
+    { width: 44, height: 44 }, // trois goodies
+    { width: 44, height: 44 }  // quatres goodies
 ];
 
 var baddies = [
   // this is an array
   { width: 53, height: 44 }, // one baddy
   { width: 53, height: 44 }, // two baddy
-  { width: 53, height: 44 } // three baddy
+  { width: 53, height: 44 }  // three baddy
 ];
 
 //New variable to check if we have lost! We set the value in init()
@@ -170,25 +170,27 @@ var init = function () {
 
 // La boucle de jeu principale
 var main = function () {
-	if (checkLevel()) {
-		//Instead of winning when all goodies are grabbed
-		//We Reset the goodies and...
-		goodies.push({ width: 32, height: 32, x: Math.random() * (canvas.width - 32), y: Math.random() * (canvas.height - 32) });
-		goodies.push({ width: 32, height: 32, x: Math.random() * (canvas.width - 32), y: Math.random() * (canvas.height - 32) });
-		goodies.push({ width: 32, height: 32, x: Math.random() * (canvas.width - 32), y: Math.random() * (canvas.height - 32) });
-		
-		// ... raise the level by 1, and add speed to the player
-		lvl++;
-		player.speed += 2;
-	}
+    if (checkLevel()) {
+        //Instead of winning when all goodies are grabbed
+        //We Reset the goodies and...
+        // use the same slightly larger size when spawning new goodies
+        goodies.push({ width: 44, height: 44, x: Math.random() * (canvas.width - 44), y: Math.random() * (canvas.height - 44) });
+        goodies.push({ width: 44, height: 44, x: Math.random() * (canvas.width - 44), y: Math.random() * (canvas.height - 44) });
+        goodies.push({ width: 44, height: 44, x: Math.random() * (canvas.width - 44), y: Math.random() * (canvas.height - 44) });
+
+        // remove previous baddies so old ones despawn, then spawn new baddies at random positions
+        baddies.length = 0; // clear existing baddies (despawn old ones)
+        baddies.push({ width: 53, height: 44, x: Math.random() * (canvas.width - 53), y: Math.random() * (canvas.height - 44) });
+        baddies.push({ width: 53, height: 44, x: Math.random() * (canvas.width - 53), y: Math.random() * (canvas.height - 44) });
+        baddies.push({ width: 53, height: 44, x: Math.random() * (canvas.width - 53), y: Math.random() * (canvas.height - 44) });
+    }
     else {
         if (gameOver) {
-            //LOSE display Game Over frame
-            if (overReady) {
-                //ctx.drawImage(overImage, 0, 0);
-                ctx.drawImage(overImage,
-                    (canvas.width-overImage.width)/2,
-                    (canvas.height-overImage.height)/2);
+            // Use the same display code as the winner: draw the win image centered
+            if (winReady) {
+                ctx.drawImage(winImage,img/lost.png,
+                    (canvas.width - winImage.width) / 2,
+                    (canvas.height - winImage.height) / 2);
             }
         }
         else {
@@ -235,18 +237,21 @@ var render = function () {
         ctx.fillRect(0,0,canvas.width,canvas.height);
     }
     if (playerReady) {
-        ctx.drawImage(playerImage, player.x, player.y);
+        // draw player scaled to player.width / player.height
+        ctx.drawImage(playerImage, player.x, player.y, player.width, player.height);
     }
     if (goodyReady)
         for (var i in goodies) {
-        ctx.drawImage(goodyImage, goodies[i].x, goodies[i].y);
+        // draw goody scaled to its width/height
+        ctx.drawImage(goodyImage, goodies[i].x, goodies[i].y, goodies[i].width, goodies[i].height);
     }
     		//Again, same thing for baddies
-	if (badReady) {
-		for (var i in baddies) {
-			ctx.drawImage(badImage, baddies[i].x, baddies[i].y);
-		}
-	}
+    if (badReady) {
+        for (var i in baddies) {
+			// draw baddy scaled to its width/height
+			ctx.drawImage(badImage, baddies[i].x, baddies[i].y, baddies[i].width, baddies[i].height);
+        }
+    }
 
 	//Label
 	ctx.fillStyle = "rgb(250, 250, 250)";

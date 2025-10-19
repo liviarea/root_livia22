@@ -32,6 +32,19 @@ h1 {
     font-size: 50px;
 }
 
+h3{
+    color: #4c8239;
+    font-family: "Gaegu", sans-serif;
+    font-size: 50px; 
+    text-align: center;
+}
+
+h2{
+    color: #4c8239;
+    font-family: "Gaegu", sans-serif;
+    font-size: 50px; 
+}
+
 a {
     text-decoration: none;
     color: #8eab83;
