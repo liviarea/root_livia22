@@ -1,9 +1,20 @@
 // Créer le canevas
 var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
-canvas.width = document.documentElement.clientWidth;
-canvas.height = document.documentElement.clientHeight;
+// make canvas fill the window (use window.inner* for full viewport)
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 document.querySelector("#gameBox").appendChild(canvas);
+
+// keep canvas size in sync with window and keep player inside bounds
+window.addEventListener('resize', function () {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    if (typeof player !== 'undefined') {
+        player.x = Math.min(player.x || 0, Math.max(0, canvas.width - player.width));
+        player.y = Math.min(player.y || 0, Math.max(0, canvas.height - player.height));
+    }
+});
 
 
 //Charger les sprites
@@ -59,22 +70,22 @@ badImage.onload = function () {
 // Créer des objets de jeu globaux 
 var player = {
     speed : 5, // mouvement en pixels par tick 
-    width: 90,   // a little bigger than goodies/baddies
-    height: 90  // increased height
+    width: 110,   // a little bigger than before
+    height: 110  // increased height
 };
 
 var goodies = [ // ceci est un tableau (array)
-    { width: 44, height: 44 }, // un goody (a little bigger)
-    { width: 44, height: 44 }, // deux goodies
-    { width: 44, height: 44 }, // trois goodies
-    { width: 44, height: 44 }  // quatres goodies
+    { width: 56, height: 56 }, 
+    { width: 56, height: 56 },
+    { width: 56, height: 56 },
+    { width: 56, height: 56 }
 ];
 
 var baddies = [
   // this is an array
-  { width: 53, height: 44 }, // one baddy
-  { width: 53, height: 44 }, // two baddy
-  { width: 53, height: 44 }  // three baddy
+  { width: 66, height: 56 }, 
+  { width: 66, height: 56 }, 
+  { width: 66, height: 56 }  
 ];
 
 //New variable to check if we have lost! We set the value in init()
@@ -174,15 +185,15 @@ var main = function () {
         //Instead of winning when all goodies are grabbed
         //We Reset the goodies and...
         // use the same slightly larger size when spawning new goodies
-        goodies.push({ width: 44, height: 44, x: Math.random() * (canvas.width - 44), y: Math.random() * (canvas.height - 44) });
-        goodies.push({ width: 44, height: 44, x: Math.random() * (canvas.width - 44), y: Math.random() * (canvas.height - 44) });
-        goodies.push({ width: 44, height: 44, x: Math.random() * (canvas.width - 44), y: Math.random() * (canvas.height - 44) });
+        goodies.push({ width: 56, height: 56, x: Math.random() * (canvas.width - 56), y: Math.random() * (canvas.height - 56) });
+        goodies.push({ width: 56, height: 56, x: Math.random() * (canvas.width - 56), y: Math.random() * (canvas.height - 56) });
+        goodies.push({ width: 56, height: 56, x: Math.random() * (canvas.width - 56), y: Math.random() * (canvas.height - 56) });
 
         // remove previous baddies so old ones despawn, then spawn new baddies at random positions
         baddies.length = 0; // clear existing baddies (despawn old ones)
-        baddies.push({ width: 53, height: 44, x: Math.random() * (canvas.width - 53), y: Math.random() * (canvas.height - 44) });
-        baddies.push({ width: 53, height: 44, x: Math.random() * (canvas.width - 53), y: Math.random() * (canvas.height - 44) });
-        baddies.push({ width: 53, height: 44, x: Math.random() * (canvas.width - 53), y: Math.random() * (canvas.height - 44) });
+        baddies.push({ width: 66, height: 56, x: Math.random() * (canvas.width - 66), y: Math.random() * (canvas.height - 56) });
+        baddies.push({ width: 66, height: 56, x: Math.random() * (canvas.width - 66), y: Math.random() * (canvas.height - 56) });
+        baddies.push({ width: 66, height: 56, x: Math.random() * (canvas.width - 66), y: Math.random() * (canvas.height - 56) });
     }
     else {
         if (gameOver) {
@@ -233,8 +244,13 @@ var main = function () {
 // Dessinez le tout
 var render = function () {
     if (bgReady) {
-        ctx.fillStyle = ctx.createPattern(bgImage, 'repeat');
-        ctx.fillRect(0,0,canvas.width,canvas.height);
+        // draw background to cover the canvas without stretching (maintain aspect ratio, crop if necessary)
+        var imgW = bgImage.width, imgH = bgImage.height;
+        var scale = Math.max(canvas.width / imgW, canvas.height / imgH); // cover
+        var drawW = imgW * scale, drawH = imgH * scale;
+        var drawX = (canvas.width - drawW) / 2;
+        var drawY = (canvas.height - drawH) / 2;
+        ctx.drawImage(bgImage, drawX, drawY, drawW, drawH);
     }
     if (playerReady) {
         // draw player scaled to player.width / player.height
@@ -245,19 +261,19 @@ var render = function () {
         // draw goody scaled to its width/height
         ctx.drawImage(goodyImage, goodies[i].x, goodies[i].y, goodies[i].width, goodies[i].height);
     }
-    		//Again, same thing for baddies
+            //Again, same thing for baddies
     if (badReady) {
         for (var i in baddies) {
-			// draw baddy scaled to its width/height
-			ctx.drawImage(badImage, baddies[i].x, baddies[i].y, baddies[i].width, baddies[i].height);
+            // draw baddy scaled to its width/height
+            ctx.drawImage(badImage, baddies[i].x, baddies[i].y, baddies[i].width, baddies[i].height);
         }
     }
 
-	//Label
-	ctx.fillStyle = "rgb(250, 250, 250)";
-	ctx.font = "20pt Helvetica";
-	ctx.fillText("Level: "+lvl, 32, 32);
-	ctx.fillText("Points: "+pts, 32, 64);
+    //Label
+    ctx.fillStyle = "rgb(250, 250, 250)";
+    ctx.font = "20pt Helvetica";
+    ctx.fillText("Level: "+lvl, 32, 32);
+    ctx.fillText("Points: "+pts, 32, 64);
 };
 
 //Fonction générique pour vérifier les collisions 
