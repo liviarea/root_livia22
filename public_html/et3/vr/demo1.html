@@ -16,13 +16,38 @@
 
 <!-- Textured box. -->
 <a-cone src="#texture"></a-cone>
-      <a-scene>
+ 
   <a-assets>
     <img id="sky" src="img/sky.jpg">
   </a-assets>
   <a-sky src="#sky"></a-sky>
+
+
+
+  <!-- Defining the URL inline. Not recommended but more comfortable for web developers. -->
+  <a-gltf-model src="img/faaaaahouse.glb"></a-gltf-model>
 </a-scene>
-    </a-scene>
+    <a-entity camera look-controls>
+  <a-entity cursor="fuse: true; fuseTimeout: 500"
+            position="0 0 -1"
+            geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+            material="color: black; shader: flat">
+  </a-entity>
+</a-entity>
+
+<a-entity id="box" cursor-listener geometry="primitive: box" material="color: blue"></a-entity>
+// Component to change to a sequential color on click.
+AFRAME.registerComponent('cursor-listener', {
+  init: function () {
+    var lastIndex = -1;
+    var COLORS = ['red', 'green', 'blue'];
+    this.el.addEventListener('click', function (evt) {
+      lastIndex = (lastIndex + 1) % COLORS.length;
+      this.setAttribute('material', 'color', COLORS[lastIndex]);
+      console.log('I was clicked at: ', evt.detail.intersection.point);
+    });
+  }
+});
   </body>
 </html>
 
