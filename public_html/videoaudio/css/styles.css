@@ -1,0 +1,51 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+@media screen and (min-width: 450px) {
+    #gallery {
+    grid-template-columns: 1fr 1fr 1fr;}
+}
+html {
+    scroll-behavior: smooth;
+  }
+
+
+
+nav ul li {
+    display: inline-block;
+    padding-right: 20px;
+    padding-top: 5px;
+ }
+
+#classes{
+        display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    }
+
+#gallery h3 {
+    grid-column: 1 / -1;
+    margin: 0;
+    padding: 10px;
+}
+    
+#mg-video{
+  display: grid;
+  justify-content: center;
+  overflow: hidden;
+  max-height: 500px;
+}
+
+iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}

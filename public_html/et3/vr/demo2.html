@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-entity camera look-controls wasd-controls position="0 1 0">
+        <a-entity cursor="fuse: true; fuseTimeout: 500"
+                  position="0 0 -1"
+                  geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                  material="color: black; shader: flat">
+        </a-entity>
+      </a-entity>
+        <a-gltf-model cursor-listener id="object" src="img/Asset 1.gltf" gltf-model="img/Asset 1.gltf" scale="-16.07 -15.83 -0.86" position="0 1.15747 0" rotation="0 0 -37.23"></a-gltf-model>
+      <a-plane cursor-listener position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+      <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+    <script>
+        let mySound1 = new Audio('img/ahh_gLSTOu4.mp3');
+
+        let lookedAtOnce = false;
+        // Component to change to a sequential color on click.
+    AFRAME.registerComponent('cursor-listener', {
+    init: function () {
+        var lastIndex = -1;
+        var COLORS = ['red', 'green', 'blue'];
+        this.el.addEventListener('click', function (evt) {
+        lastIndex = (lastIndex + 1) % COLORS.length;
+        this.setAttribute('material', 'color', COLORS[lastIndex]);
+        console.log('I was clicked at: ', evt.detail.intersection.point);
+
+        if(this.getAttribute("id") == "object") {
+            if(!lookedAtOnce) {
+               alert("yay!");
+               lookedAtOnce = true;
+               mySound1.play();
+           } else {
+               this.setAttribute("animation", "dur: 3000; property: position; to: 2 5 4;");
+           }
+        }
+    });
+    }
+    });
+    </script>
+  </body>
+</html>

@@ -38,23 +38,22 @@ html {
     scroll-behavior: smooth;
 }
 
-/* title */
-.staatliches-regular {
-  font-family: "Staatliches", sans-serif;
-  font-weight: 400;
+ .gamja-flower-bold {
+  font-family: "Gamja Flower", sans-serif;
+  font-weight: 700;
   font-style: normal;
 }
 
-/* body text */
-.lexend-giga-regular {
-  font-family: "Lexend Giga", sans-serif;
+
+.plus-jakarta-sans-SemiBold {
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 600;
   font-style: normal;
 }
 
 body {
-    background-color: #f4efe6;
+    background-color: #fff8e4;
         justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -65,19 +64,25 @@ header {
     height: auto;
     padding: 10px;
     text-align: center;
-    background-color: #523d2d;
+    background-color: #517c9b;
 }
 
 h1 {
-    color: #f4efe6;
-    font-family: staatliches-regular;
+    color: #242424;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 50px;
 }
 
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 32px;
+    }
+}
+
 h2 {
-    font-family: lexend-giga-regular;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 30px;
-    color: #322115;
+    color: #242424;
     padding: 8px;
     margin: 0.5em 1.5em;
 }
@@ -88,34 +93,47 @@ a{
     margin: 0.5em 1.5em;
 }
 
-a:hover {
-    color: #f4efe6;
-    text-decoration: none;
-}
-
-button {
-    font-family: lexend-giga-regular;
-    font-size: 20px;
-    background-color: #523d2d;
-    color: #f4efe6;
-    border: #322115, 2px;
-    border-style: solid;
-    padding: 8px;
-    border-radius: 6px;
-    display: block;
-    margin: 0.5em 1.5em;
-    box-shadow: #2d233a 3px 3px;
-}
-
-button:hover {
-    background-color: #3e2f24;
+.liquid {
+        background: #c8486a;
+        color: #c8486a;
+        border: 2px solid ;
+        position: relative;
+        overflow: hidden;
+        padding: 6px 8px;
+        font-size: 1em;
+        font-family: "Gamja Flower", sans-serif;
+        margin: 0.8em 0.3em;
+        border-radius: 8px;
+        text-decoration: wavy underline;
+    text-decoration-thickness: 1.8px;
+      }
+      .liquid::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #a43654;
+        transition: top 0.3s;
+        z-index: -1;
+      }
+      .liquid:hover::before {
+        top: 0;
+      }
+    .liquid:hover a {
     color: #f4efe6;
     text-decoration: wavy underline;
+    text-decoration-thickness: 1.8px;
 }
 
-button a {
-    text-decoration: none;
-    color: #f4efe6;
+a {
+    color: #242424;
+    font-family: "Gamja Flower", sans-serif;
+    font-size: 20px;
+    padding: 15px;
+    text-decoration: wavy underline;
+    text-decoration-thickness: 1.8px;
 }
 
 #classes{
